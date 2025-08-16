@@ -1,11 +1,3 @@
-<?php
-    echo "I love pizza <br>";
-    //this is a comment
-    /*
-    i am rakbi
-    */
-    echo "its really good"
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,7 +6,17 @@
     <title>Document</title>
 </head>
 <body>
-    <br>
-    <button>order pizza</button>
+    <form action="index.php" method="post">
+        <label> username: </label>
+        <input type = "text" name = "username"> <br>
+        <label >password</label>
+        <input type="password" name="password"><br>
+        <input type="submit" value="Log In">
+    </form>
 </body>
 </html>
+
+<?php
+    echo "{$_POST["username"]}<br>";
+    echo "{$_POST["password"]}<br>";
+?>
