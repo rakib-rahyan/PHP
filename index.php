@@ -89,8 +89,17 @@ if (isset($_POST["x"])) {
     if (isset($_POST["radius"]) && is_numeric($_POST["radius"])) {
         $radius = floatval($_POST["radius"]);
         $circumference = 2 * pi() * $radius;
+        $circumference = round($circumference, 2);
         echo "<p>The circumference is {$circumference}</p>";
-        // Draw the circle using SVG
+        $area = pi()* pow($radius, 2);
+        $area = round($area, 2);
+        $volume = (4/3) * pi()*pow($radius, 3);
+        $volume= round($volume, 2);
+
+        echo "<p>The area is {$area}</p>";
+                // Draw the circle using SVG
+
+        echo "<p>The volume is {$volume}</p>";
         echo '<svg width="'.($radius*2+10).'" height="'.($radius*2+10).'">
                 <circle cx="'.($radius+5).'" cy="'.($radius+5).'" r="'.$radius.'" stroke="black" stroke-width="2" fill="lightblue" />
               </svg>';
